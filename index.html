@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Semantic Website</title>
+    <style>
+        /* Step 2: Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f1e9ff;
+            /* Extra room at the top so content doesn't hide behind fixed header */
+            padding-top: 70px; 
+        }
+
+        /* Step 4 & 5: Fixed Header and Flexbox Styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #a62af8;
+        }
+
+        /* Step 4: Navigation Styling with Flexbox */
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #a62af8;
+        }
+
+        /* Step 4: Main Content Container with CSS Grid (Layout split) */
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* 2 parts article, 1 part sidebar */
+            gap: 2rem;
+        }
+
+        /* Card Section Panels */
+        section, aside {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        address {
+            font-style: normal;
+            margin-top: 0.5rem;
+        }
+
+        .email {
+            color: #5ca7f1;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Step 5: Footer Layout Design */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #333;
+            color: white;
+            margin-top: 4rem;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: #a62af8;
+        }
+
+        /* Mobile Responsiveness Rules */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            body {
+                padding-top: 110px;
+            }
+            main {
+                grid-template-columns: 1fr; /* Stack panels vertically on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Step 3 & 5: Semantic Header with Title/Logo and Nav -->
+    <header>
+        <div class="logo">MyWebsite</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Step 3 & 4: Main semantic container wrapping layout grid modules -->
+    <main>
+        <!-- Article/Section panel for primary info layout -->
+        <section>
+            <h2>About Us</h2>
+            <p>Welcome to our website! This is a clean, structured semantic paragraph about our company profile. We specialize in building clean web interfaces using modern engineering standards.</p>
+        </section>
+
+        <!-- Aside panel acting as a supporting sidebar element -->
+        <aside>
+            <h2>Contact Details</h2>
+            <address>
+                <p>Reach out to us directly via email:</p>
+                <a class="email" href="mailto:example@email.com">example@email.com</a>
+            </address>
+        </aside>
+    </main>
+
+    <!-- Step 3 & 5: Footing info with nested navigation references -->
+    <footer>
+        <p>&copy; 2026 My Website. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+</body>
+</html>
